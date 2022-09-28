@@ -48,10 +48,15 @@ function App() {
           <p>ну молодец иди на хуй</p>
         )
         : (
-          <>
+          <div className='textCheck'>
             <input type="text" value={value} autoFocus onChange={check} />
-            {arrText.map((e, i) => (<span key={i} id={i} className={i == number ? "wgreen" : "wblack"}>{e}</span>))}
-          </>
+            <>
+              {arrText.map((e, i) => (<span key={i} id={i} className={i == number ? "wgreen" : "wblack"}>
+                {e}
+              </span>
+              ))}
+            </>
+          </div>
         )
       }
 

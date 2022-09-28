@@ -1,14 +1,26 @@
-span{
+.App {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  height: 100vh;
+}
+
+span,p {
   font-size: 24px;
 }
-.wgreen{
-  
+
+input {
+  height: 0%;
+  width: 0%;
+}
+.wgreen {
   border: solid;
   border-color: rgb(59, 130, 59);
   border-radius: 3px;
   background-color: rgba(59, 130, 59, 0.2);
 }
 
-.wblack{
+.wblack {
   color: brown;
 }
