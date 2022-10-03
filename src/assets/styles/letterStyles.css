@@ -1,0 +1,11 @@
+.letter{
+    margin-left: 2px;
+}
+
+.letter_right{
+    background-color: green;
+    border-radius: 2px;
+}
+.letter_wrong{
+    background-color:red ;
+}
