@@ -1,9 +1,10 @@
 import "./App.css";
 import TypeWordPage from "./pages/TypeWordPage";
+
 function App() {
   return (
     <div className="App">
-      <TypeWordPage/>
+      <TypeWordPage />
     </div>
   );
 }
