@@ -1,0 +1,17 @@
+.TypeWord__Output-text{
+    display: flex;
+    justify-content: center;
+}
+.textCheck{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:100vh;
+
+}
+.typeWordLayout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
