@@ -2,7 +2,7 @@ import "../assets/styles/TypeWordPage.css";
 import OutputText from "../components/OutputText";
 import useText from "../hooks/useText";
 const TypeWordPage = () => {
-  const { cuurentText } = useText();
+  const { cuurentText } = useText("MEANINGFUL");
   return (
     <>
       <div className="typeWordLayout">

@@ -2,23 +2,25 @@ import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { useState } from "react";
 import useCharGenerator from "./useCharGenerator";
 
-const useText = () => {
-  const { getMeaningfulText, setNextPortionText } = useCharGenerator();
+const useText = (TEXT_MODE) => {
+  const { getMeaningfulText, setNextPortionText,generateRandomEnglishString } = useCharGenerator();
   const [cuurentText, setcurrentText] = useState([{ key: "" }]);
 
   const isWrong = useRef(false);
   const currentPostion = useRef(0);
 
-  const setTextState = () => {
-    const text = setNextPortionText();
-    const textObj = text.split("").map((key, index) => {
+  const textAdpater = (text) => {
+    return text.split("").map((key, index) => {
       return {
         key,
         isActice: false,
         isWrong: false,
       };
     });
-    setcurrentText(textObj);
+  }
+  const setMeangfulTextState = () => {
+    const text = setNextPortionText();
+    setcurrentText(textAdpater(text));
   };
 
   useEffect(() => {
@@ -28,9 +30,32 @@ const useText = () => {
     };
   }, [cuurentText]);
 
+  const setRandomText = () => {
+    const text = generateRandomEnglishString();
+    setcurrentText(textAdpater(text));
+  }
+
+  const getNextText = () => {
+    if (TEXT_MODE === "MEANINGFUL") {
+      setMeangfulTextState();
+    } 
+    else if (TEXT_MODE === "RANDOM_ENGLISH") {
+      setRandomText()
+    }
+    else{
+      setMeangfulTextState();
+    }
+  };
+
+  const intialLoadText = () => {
+    if (TEXT_MODE === "MEANINGFUL") {
+      getMeaningfulText();
+    }
+  };
+
   useLayoutEffect(() => {
-    getMeaningfulText();
-    setTextState();
+    intialLoadText();
+    getNextText();
   }, []);
 
   const keyDownHandler = useCallback(
@@ -44,7 +69,7 @@ const useText = () => {
             currentPostion.current += 1;
             if (index === cuurentText.length - 1) {
               setTimeout(() => {
-                setTextState();
+                getNextText();
                 currentPostion.current = 0;
               });
             }
@@ -65,7 +90,6 @@ const useText = () => {
     [cuurentText]
   );
 
-
-  return {cuurentText, keyDownHandler};
+  return { cuurentText, keyDownHandler };
 };
-export default useText
+export default useText;
