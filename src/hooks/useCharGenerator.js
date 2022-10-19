@@ -4,7 +4,9 @@ const useCharGenerator = () => {
     const textRef = useRef(null);
     const [currentChunkNumber, setCurrentChunkNumber] = useState(0);
     const [stepChunkText, setStepChunkText] = useState(10);
-    const [randomLengthValue, setRandomLengthValue] = useState(30)
+    const [randomLengthValue, setRandomLengthValue] = useState(10)
+    const [selectedlistChar, setSelectedlistChar] = useState(['a','z','e','1','!'])
+
 
     function getRandomArbitrary(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
@@ -22,6 +24,18 @@ const useCharGenerator = () => {
         return test
     }
 
+    const generateRandomRussiaString = () => {
+        const strArr = new Array(randomLengthValue).fill(null)
+        const test =  strArr.map( _ =>  String.fromCharCode(getRandomArbitrary(1040,1103))).join('')
+        return test
+    }
+
+    const generateRandomSelectedChars = () => {
+        const strArr = new Array(randomLengthValue).fill(null)
+        const test =  strArr.map( _ =>  selectedlistChar[getRandomArbitrary(0,selectedlistChar.length)] ).join('')
+        return test
+    }
+
     // TODO get ranom index
     const getMeaningfulText = () => {
         let index = 0;
@@ -32,6 +46,8 @@ const useCharGenerator = () => {
         getMeaningfulText,
         setNextPortionText,
         generateRandomEnglishString,
+        generateRandomSelectedChars,
+        generateRandomRussiaString
     };
 };
 

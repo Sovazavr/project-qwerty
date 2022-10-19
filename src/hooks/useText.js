@@ -3,7 +3,7 @@ import { useState } from "react";
 import useCharGenerator from "./useCharGenerator";
 
 const useText = (TEXT_MODE) => {
-  const { getMeaningfulText, setNextPortionText,generateRandomEnglishString } = useCharGenerator();
+  const { getMeaningfulText, setNextPortionText,generateRandomEnglishString, generateRandomSelectedChars,generateRandomRussiaString } = useCharGenerator();
   const [cuurentText, setcurrentText] = useState([{ key: "" }]);
 
   const isWrong = useRef(false);
@@ -30,9 +30,24 @@ const useText = (TEXT_MODE) => {
     };
   }, [cuurentText]);
 
-  const setRandomText = () => {
-    const text = generateRandomEnglishString();
+
+  const setRandomText = (text) => {
     setcurrentText(textAdpater(text));
+  }
+
+  const setRandomEnglishText = () => {
+    const text = generateRandomEnglishString();
+    setRandomText(text)
+  }
+
+  const setRandomSelectedText = () => {
+    const text = generateRandomSelectedChars();
+    setRandomText(text)
+  }
+
+  const setRandomRussiaText = () => {
+    const text = generateRandomRussiaString();
+    setRandomText(text)
   }
 
   const getNextText = () => {
@@ -40,7 +55,13 @@ const useText = (TEXT_MODE) => {
       setMeangfulTextState();
     } 
     else if (TEXT_MODE === "RANDOM_ENGLISH") {
-      setRandomText()
+      setRandomEnglishText()
+    }
+    else if(TEXT_MODE === "RANDOM_SELECTED") {
+      setRandomSelectedText()
+    }
+    else if (TEXT_MODE === "RANDOM_RUSSIA") {
+      setRandomRussiaText()
     }
     else{
       setMeangfulTextState();
