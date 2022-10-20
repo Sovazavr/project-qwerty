@@ -5,7 +5,7 @@ const useCharGenerator = () => {
     const [currentChunkNumber, setCurrentChunkNumber] = useState(0);
     const [stepChunkText, setStepChunkText] = useState(10);
     const [randomLengthValue, setRandomLengthValue] = useState(10)
-    const [selectedlistChar, setSelectedlistChar] = useState(['a','z','e','1','!'])
+    const [selectedlistChar, setSelectedlistChar] = useState(['a','z','e','1','!','r','q'])
 
 
     function getRandomArbitrary(min, max) {
