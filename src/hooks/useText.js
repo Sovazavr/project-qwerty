@@ -25,6 +25,7 @@ const useText = () => {
     document.addEventListener("keyup", keyDownHandler, false);
     return () => {
       document.removeEventListener("keyup", keyDownHandler);
+
     };
   }, [cuurentText]);
 
@@ -36,7 +37,7 @@ const useText = () => {
   const keyDownHandler = useCallback(
     (e) => {
       if (e.key === "Shift") return;
-      console.log(e.key);
+      // console.log(e.key);
       const prevPosition = currentPostion.current;
       const newObj = cuurentText.map((textObj, index) => {
         if (index === prevPosition) {
@@ -61,6 +62,7 @@ const useText = () => {
         } else return { ...textObj };
       });
       setcurrentText(newObj);
+      
     },
     [cuurentText]
   );
