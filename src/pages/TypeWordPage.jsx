@@ -1,4 +1,7 @@
+
 import "../assets/styles/TypeWordPage.css";
+
+import KeyboardWrapper from "../components/KeyboardWrapper";
 import OutputText from "../components/OutputText";
 import useText from "../hooks/useText";
 const TypeWordPage = () => {
@@ -9,7 +12,11 @@ const TypeWordPage = () => {
         <div className="textCheck">
           <OutputText cuurentText={cuurentText} />
         </div>
+
+        {/* <KeyboardEN/> */}
+        <KeyboardWrapper/>
       </div>
+      
     </>
   );
 };

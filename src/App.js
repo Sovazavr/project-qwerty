@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<TypeWordPage/>} />
-      </Routes> 
+        <Route path="/" element={<TypeWordPage />} />
+      </Routes>
     </div>
   );
 }

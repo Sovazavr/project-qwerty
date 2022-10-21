@@ -1,4 +1,6 @@
 import "../assets/styles/letterStyles.css";
+
+
 const OutputText = ({ cuurentText }) => {
   const getClasNameForLetter = (letterObj) => {
     if(letterObj.isActice){

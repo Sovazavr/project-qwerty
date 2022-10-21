@@ -1,6 +1,7 @@
 .TypeWord__Output-text{
     display: flex;
     justify-content: center;
+    
 }
 .textCheck{
     display: flex;
@@ -8,9 +9,11 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100vw;
+
 }
 .typeWordLayout{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
