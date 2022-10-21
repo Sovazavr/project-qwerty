@@ -13,7 +13,7 @@ const KeyboardWrapper = () => {
         if (svgElemPaths.length > 1) {
             svgElemPaths[1].style.fill = colorText
         }
-    })
+    },[])
     const keyUnPressing = useCallback((e) => {
         e.preventDefault()
         console.log(e.keyCode);
@@ -24,7 +24,7 @@ const KeyboardWrapper = () => {
         if (svgElemPaths.length > 1) {
             svgElemPaths[1].style.fill = 'black'
         }
-    })
+    },[])
     useEffect(() => {
         document.addEventListener("keydown", keyPressing, false);
         document.addEventListener("keyup", keyUnPressing, false)
