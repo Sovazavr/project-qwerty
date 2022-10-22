@@ -31,7 +31,9 @@ module.exports = {
         fade:'fadeIn .5s ease-in-out'
       },
       colors:{
-        primary:'blue'
+        primary:'#a8c8e9',
+        secondary:'#0d99ff',
+        additional:'#6E91B5'
       },
       zIndex:{
         1:'1'

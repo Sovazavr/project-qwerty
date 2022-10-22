@@ -4,7 +4,7 @@ const useCharGenerator = () => {
     const textRef = useRef(null);
     const [currentChunkNumber, setCurrentChunkNumber] = useState(0);
     const [stepChunkText, setStepChunkText] = useState(10);
-    const [randomLengthValue, setRandomLengthValue] = useState(10)
+    const [randomLengthValue, setRandomLengthValue] = useState(50)
     const [selectedlistChar, setSelectedlistChar] = useState(['a','z','e','1','!','r','q'])
 
 
