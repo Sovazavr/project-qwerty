@@ -14,7 +14,10 @@
     height: 100%;
     max-width: 1005px;
     justify-content: space-between;
-
+}
+.setting-letter-wrapper{
+    border: 2px solid #6E91B5;
+    background-color: #DEE9F3;
 }
 .keyWords {
     display: flex;
