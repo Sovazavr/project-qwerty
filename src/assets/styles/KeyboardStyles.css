@@ -24,7 +24,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 825px;
-    
+    align-items: center;
+    align-content: center;
 }
 .keyWords svg {
     
@@ -40,6 +41,8 @@
     justify-content: space-between;
     max-height: 320px;
     max-width: 160px;
+    align-items: center;
+    align-content: center
 }
 
 .optionKeys{

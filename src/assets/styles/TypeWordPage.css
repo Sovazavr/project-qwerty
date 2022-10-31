@@ -1,7 +1,9 @@
 .TypeWord__Output-text{
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;   
+}
+.fullHeight{
+    height:100%;
 }
 .textCheck{
     display: flex;
