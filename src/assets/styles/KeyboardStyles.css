@@ -16,9 +16,17 @@
     justify-content: space-between;
 }
 .setting-letter-wrapper{
-    border: 2px solid #6E91B5;
     background-color: #DEE9F3;
 }
+
+.setting-letter-wrapper{
+    background-color: #DEE9F3;
+}
+
+.setting-letter-wrapper_active{
+    border: 2px solid #6E91B5;
+}
+
 .keyWords {
     display: flex;
     justify-content: space-between;

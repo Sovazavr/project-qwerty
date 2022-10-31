@@ -31,9 +31,11 @@ module.exports = {
         fade:'fadeIn .5s ease-in-out'
       },
       colors:{
-        primary:'#a8c8e9',
+        primary:'#9CB3C9',
         secondary:'#0d99ff',
-        additional:'#6E91B5'
+        additional:'#6E91B5',
+        keyboardBorder:'#A8C8E9',
+        settingLetter:'#35587C'
       },
       zIndex:{
         1:'1'

@@ -4,7 +4,7 @@ const useCharGenerator = () => {
     const textRef = useRef(null);
     const [currentChunkNumber, setCurrentChunkNumber] = useState(0);
     const [stepChunkText, setStepChunkText] = useState(10);
-    const [randomLengthValue, setRandomLengthValue] = useState(50)
+    const [randomLengthValue, setRandomLengthValue] = useState(120)
     const [selectedlistChar, setSelectedlistChar] = useState(['a','z','e','1','!','r','q'])
 
 
@@ -12,7 +12,7 @@ const useCharGenerator = () => {
         return Math.floor(Math.random() * (max - min) + min)
     }
     const setNextPortionText = () => {
-        if (!textRef.current) return "sdas";
+        if (!textRef.current) return "";
         const portionText = textRef.current.slice(currentChunkNumber, currentChunkNumber + stepChunkText);
         setCurrentChunkNumber((prev) => prev + stepChunkText);
         return portionText.join(' ');
